@@ -43,22 +43,15 @@ function SkillList() {
   return (
     <div className="skill-list">
       {skills.map((item, index) => (
-        <Skill
+        <div
           key={index}
-          skill={item.skill}
-          emoji={item.emoji}
-          color={item.color}
-        />
+          className="skill"
+          style={{ backgroundColor: item.color }}
+        >
+          <span>{item.emoji}</span>
+          <span>{item.skill}</span>
+        </div>
       ))}
-    </div>
-  );
-}
-
-function Skill({ skill, emoji, color }) {
-  return (
-    <div className="skill" style={{ backgroundColor: color }}>
-      <span className="skill-emoji">{emoji}</span>
-      <span className="skill-name">{skill}</span>
     </div>
   );
 }
