@@ -15,11 +15,7 @@ function App() {
 }
 
 function Avatar() {
-  return (
-    <div className="avatar-container">
-      <img src="issam.jpg" alt="Issam Abu" className="avatar" />
-    </div>
-  );
+  return <img src="issam.jpg" alt="Issam Abu" className="avatar" />;
 }
 
 function Intro() {
@@ -33,25 +29,23 @@ function Intro() {
 }
 
 function SkillList() {
-  const skills = [
-    { skill: "React", emoji: "💪", color: "#00D9FF" },
-    { skill: "Node.js", emoji: "🚀", color: "#00FF88" },
-    { skill: "JavaScript", emoji: "✨", color: "#FFD700" },
-    { skill: "HTML/CSS", emoji: "👍", color: "#FF6B6B" },
-  ];
-
   return (
     <div className="skill-list">
-      {skills.map((item, index) => (
-        <div
-          key={index}
-          className="skill"
-          style={{ backgroundColor: item.color }}
-        >
-          <span>{item.emoji}</span>
-          <span>{item.skill}</span>
-        </div>
-      ))}
+      <Skill skill="React" emoji="💪" color="#00D9FF" />
+      <Skill skill="Node.js" emoji="🚀" color="#00FF88" />
+      <Skill skill="JavaScript" emoji="✨" color="#FFD700" />
+      <Skill skill="Vue.js" emoji="👍" color="#42D392" />
+      <Skill skill="Laravel" emoji="🚀" color="#FF2D20" />
+      <Skill skill="HTML/CSS" emoji="👍" color="#FF6B6B" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <span>{props.emoji}</span>
+      <span>{props.skill}</span>
     </div>
   );
 }
